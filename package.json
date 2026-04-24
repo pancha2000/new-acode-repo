@@ -1,0 +1,70 @@
+{
+  "name": "devassist-ai",
+  "displayName": "DevAssist AI",
+  "description": "AI-powered coding assistant using Claude API",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:devassist.explain",
+    "onCommand:devassist.fix",
+    "onCommand:devassist.generate",
+    "onCommand:devassist.chat",
+    "onCommand:devassist.setApiKey"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "devassist.explain",
+        "title": "🔍 Explain Code (AI)"
+      },
+      {
+        "command": "devassist.fix",
+        "title": "🐛 Fix Error (AI)"
+      },
+      {
+        "command": "devassist.generate",
+        "title": "✨ Generate Code (AI)"
+      },
+      {
+        "command": "devassist.chat",
+        "title": "💬 AI Chat"
+      },
+      {
+        "command": "devassist.setApiKey",
+        "title": "🔑 Set Claude API Key"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "devassist.explain",
+          "when": "editorHasSelection",
+          "group": "devassist@1"
+        },
+        {
+          "command": "devassist.fix",
+          "when": "editorHasSelection",
+          "group": "devassist@2"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "devassist.explain",
+        "key": "ctrl+shift+e"
+      },
+      {
+        "command": "devassist.chat",
+        "key": "ctrl+shift+a"
+      },
+      {
+        "command": "devassist.generate",
+        "key": "ctrl+shift+g"
+      }
+    ]
+  }
+}
