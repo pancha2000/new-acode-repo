@@ -1,0 +1,7 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+[remote "origin"]
+	url = https://github.com/pancha2000/new-acode-repo.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
